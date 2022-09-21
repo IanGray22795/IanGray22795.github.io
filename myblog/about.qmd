@@ -1,5 +1,5 @@
 ---
-title: "About"
+title: "About this Blog"
 image: profilePhoto.jpg
 about:
   template: jolla
@@ -16,4 +16,5 @@ about:
 
 ---
 
-About this blog
+Hello, my name is Ian Gray I am a current student at Brigham Young University - Idaho. I am currently working on my senior project constructing a Duckdb database to learn about the advantages of using a non-localized database
+
