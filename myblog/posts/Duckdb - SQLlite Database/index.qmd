@@ -1,0 +1,11 @@
+---
+title: "Basics of Duckdb"
+author: "Ian Gray"
+date: "2022-09-20"
+categories: [news, code, analysis]
+image: "image.jpg"
+---
+
+```{r}
+
+```
