@@ -1,6 +1,0 @@
-install.packages("duckdb")
-library("DBI")
-
-Magic_DB = dbConnect(duckdb::duckdb())
-
-dbExecute(Magic_DB, "iris", iris)
