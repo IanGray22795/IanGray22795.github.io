@@ -1,9 +1,11 @@
 ---
-title: "myfirst post"
+title: "DuckDB Synopses"
 author: "Ian Gray"
 date: "2022-11-7"
 categories: [news, code, analysis]
-image: "image.jpg"
 ---
 
+# Why Use DuckDB
+
+There are several Database Management Systems (DBMS) MySQL, PostgreSQL, SQLite to name a few. DuckDB is one that that has uses outside of what other DBMS can do or be used for. Referencing their page [duckdb.org](https:duckdb.org)
 
