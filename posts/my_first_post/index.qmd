@@ -1,0 +1,9 @@
+---
+title: "myfirst post"
+author: "Ian Gray"
+date: "2022-11-7"
+categories: [news, code, analysis]
+image: "image.jpg"
+---
+
+
