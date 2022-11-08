@@ -32,6 +32,6 @@
     "href": "posts/my_first_post/index.html",
     "title": "DuckDB Synopses",
     "section": "",
-    "text": "There are several Database Management Systems (DBMS) MySQL, PostgreSQL, SQLite to name a few. DuckDB is one that that has uses outside of what other DBMS can do or be used for. Referencing their page duckdb.org"
+    "text": "Why Use DuckDB\nThere are several Database Management Systems (DBMS) MySQL, PostgreSQL, SQLite to name a few. DuckDB is one that that has uses outside of what other DBMS can do or be used for. Referencing their page duckdb.org"
   }
 ]

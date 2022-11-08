@@ -3,9 +3,16 @@ title: "DuckDB Synopses"
 author: "Ian Gray"
 date: "2022-11-7"
 categories: [news]
+image: "DuckDB_Logo.jpg"
 ---
+
+![](DuckDB_Logo.jpg)
+
+# What is DuckDB 
+
+DuckDB is an online analytical processing (OLAP) Database Management System (DBMS) run in process
 
 # Why Use DuckDB
 
-There are several Database Management Systems (DBMS) MySQL, PostgreSQL, SQLite to name a few. DuckDB is one that that has uses outside of what other DBMS can do or be used for. Referencing their page [duckdb.org](https:duckdb.org)
+There are several DBMS MySQL, PostgreSQL, SQLite to name a few. DuckDB is one that that has uses outside of what other DBMS can do or be used for. Referencing their page [duckdb.org](https:duckdb.org)
 
