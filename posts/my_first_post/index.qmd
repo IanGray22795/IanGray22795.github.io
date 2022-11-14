@@ -10,9 +10,16 @@ image: "DuckDB_Logo.jpg"
 
 # What is DuckDB 
 
-DuckDB is an online analytical processing (OLAP) Database Management System (DBMS) run in process
+DuckDB is an online analytical processing (OLAP) Database Management System (DBMS) run in process.
 
 # Why Use DuckDB
 
-There are several DBMS MySQL, PostgreSQL, SQLite to name a few. DuckDB is one that that has uses outside of what other DBMS can do or be used for. Referencing their page [duckdb.org](https:duckdb.org)
+There are several DBMS MySQL, PostgreSQL, SQLite to name a few. DuckDB is one that that has uses outside of what other DBMS can do or be used for. Referencing their page [duckdb.org](https:duckdb.org). Processing and storing tabular datasets is quick and easy to analyze, joining and aggregating large datasets is made simple through SQL queries, and doing large concurent changes to multiple tables quickly and efficiently.
 
+# Starting With DuckDB
+
+```{r, include = TRUE}
+install.pacackages("duckdb")
+library(duckdb)
+
+```
