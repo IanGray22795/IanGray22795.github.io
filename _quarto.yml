@@ -5,7 +5,7 @@ project:
 website:
   title: "Ian Gray"
   navbar:
-    background: "dark"
+    background: primary
     right:
       - about.qmd
       - icon: github
@@ -14,7 +14,7 @@ website:
         href: https://linkedin.com/in/iangray27
 format:
   html:
-    theme: morph
+    theme: darkly
     css: styles.css
 
 
