@@ -6,4 +6,25 @@ categories: [Analysis]
 image: "Amazon-S3-Logo.svg"
 ---
 
-# 
+# What is s3?
+
+Simple, Storage, Service that is the expanded acronym for s3. In essence s3 or a s3 bucket is a simple storage provided as a service by cloud computing companies such as Amazon and Google. One of the most interesting things abour s3 is that it is a flat storage container although it looks very similar to your file system on your local computer. The one big difference is that when searching for files in s3 a program will see all files even if they are contained in a folder.
+
+# How is This Useful
+
+Being a storage system that anyone with access can pull files from and uopload files to and have the same structure to read files into programs is valuable enough. It also is extremely cheap for business use as 1TB coud run you a maximum of $10 a month. The support for R and Python through packages that have been built is useful for data science and data analytics work.
+
+DuckDB has extensions, that will eventually be included in the base package, to connect directly to a s3 bucket. Just by setting the bucket name, pass key, and secret pass key if applicable you can pull all data from the s3 bucket to analyze and manipulate using duckdb.
+
+```{.py filename=s3_start_up.py}
+#first we build the the database
+pip install duckdb==0.6.0
+import duckdb as db
+
+con = db.connect(database = ":memory:", read_only = False)
+
+dbExecute(DB, """INSTALL httpfs;
+                 LOAD httpfs""")
+#note: as of this post the extension is non functional in R but works in python
+dbExecute
+```
