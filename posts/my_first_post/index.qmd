@@ -26,3 +26,20 @@ DB <- dbConnect(duckdb::duckdb(), dbir = ":memory:")
 
 ```
 We use the ":memory:" variable to save the data base as a non-physical file and hold the database in memory.
+
+Through these simple lines of code we build a database to start inputing data into. This is easily done through sql insert statments or loading in R data frames or csv/parquet files as such.
+
+```{.r filename="Inputing_your_data.r"}
+#inputing data directly with SQL statments
+dbExecute(DB, """CREATE TABLE a (id INTEGER, name VARCHAR);
+                 INSERT INTO a VALUES (1, bob), (2, kate), (3, drew);""") 
+                 
+#taking an r dataframe and inputing it into the database
+dbWriteTable(DB, "iris_table", iris) 
+```
+
+In the previous R snippet I showed how to create and table and put values into it in two of three ways duckdb suggests. Additionally, the way the SQL statement is coded to allow for multiple lines in a single function by using ";" to split Queries just like in normal SQL syntax.
+
+# Simple Yet Powerful
+Just as shown above DuckDB is simple to use and easy to work with. additionally it encourages learning in multiple languages to get the best use from it. seeing as SQL, R, and Python are the best languages to learn for Data Science and Data Analytics it can be a powerful teaching tool. It also is best used for large data sources and can easily manipulate them with the dplyr as it natively convert dplyr functions into SQL Querys to analyza the data faster.
+
