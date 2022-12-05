@@ -13,7 +13,7 @@ website:
         href: https://linkedin.com/in/iangray27
 format:
   html:
-    theme: cosmo
+    theme: morph
     css: styles.css
 
 
