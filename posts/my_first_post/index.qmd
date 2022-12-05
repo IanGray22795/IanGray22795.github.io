@@ -18,8 +18,11 @@ There are several DBMS MySQL, PostgreSQL, SQLite to name a few. DuckDB is one th
 
 # Starting With DuckDB
 
-```{r, include = TRUE}
-install.pacackages("duckdb")
+```{.r filename="Starting_with_duckdb.r"}
+install.packages("duckdb")
 library(duckdb)
+#Start your first database
+DB <- dbConnect(duckdb::duckdb(), dbir = ":memory:") 
 
 ```
+We use the ":memory:" variable to save the data base as a non-physical file and hold the database in memory.

@@ -1,0 +1,37 @@
+[
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About",
+    "section": "",
+    "text": "About this blog"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Ian Gray Blog",
+    "section": "",
+    "text": "news\n\n\n\n\n\n\n\n\n\n\n\nNov 7, 2022\n\n\nIan Gray\n\n\n\n\n\n\n  \n\n\n\n\n\n\n\n\n\n\nnews\n\n\ncode\n\n\nanalysis\n\n\n\n\n\n\n\n\n\n\n\nOct 10, 2022\n\n\nHarlow Malloc\n\n\n\n\n\n\n  \n\n\n\n\n\n\n\n\n\n\nnews\n\n\n\n\n\n\n\n\n\n\n\nOct 7, 2022\n\n\nTristan O’Malley\n\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "posts/my_first_post/index.html",
+    "href": "posts/my_first_post/index.html",
+    "title": "DuckDB Synopses",
+    "section": "",
+    "text": "What is DuckDB\nDuckDB is an online analytical processing (OLAP) Database Management System (DBMS) run in process.\n\n\nWhy Use DuckDB\nThere are several DBMS MySQL, PostgreSQL, SQLite to name a few. DuckDB is one that that has uses outside of what other DBMS can do or be used for. Referencing their page duckdb.org. Processing and storing tabular datasets is quick and easy to analyze, joining and aggregating large datasets is made simple through SQL queries, and doing large concurent changes to multiple tables quickly and efficiently.\n\n\nStarting With DuckDB\n\n\nStarting_with_duckdb.r\n\ninstall.packages(\"duckdb\")\nlibrary(duckdb)\n#Start your first database\nDB <- dbConnect(duckdb::duckdb(), dbir = \":memory:\") \n\nWe use the “:memory:” variable to save the data base as a non-physical file and hold the database in memory."
+  },
+  {
+    "objectID": "posts/post-with-code/index.html",
+    "href": "posts/post-with-code/index.html",
+    "title": "Post With Code",
+    "section": "",
+    "text": "This is a post with executable code."
+  },
+  {
+    "objectID": "posts/welcome/index.html",
+    "href": "posts/welcome/index.html",
+    "title": "Welcome To My Blog",
+    "section": "",
+    "text": "Since this post doesn’t specify an explicit image, the first image in the post will be used in the listing page of posts."
+  }
+]
