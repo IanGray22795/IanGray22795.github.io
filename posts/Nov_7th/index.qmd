@@ -2,8 +2,8 @@
 title: "DuckDB Synopses"
 author: "Ian Gray"
 date: "2022-11-7"
-categories: [news]
-image: "DuckDB_Logo.jpg"
+categories: [News, Analysis]
+image: "DuckDB_Logo.jpeg"
 ---
 
 ![](DuckDB_Logo.jpeg)
