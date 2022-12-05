@@ -213,6 +213,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <section id="how-is-this-useful" class="level1">
 <h1>How is This Useful</h1>
 <p>Being a storage system that anyone with access can pull files from and uopload files to and have the same structure to read files into programs is valuable enough. It also is extremely cheap for business use as 1TB coud run you a maximum of $10 a month. The support for R and Python through packages that have been built is useful for data science and data analytics work.</p>
+</section>
+<section id="duckdb-and-s3" class="level1">
+<h1>DuckDB and s3</h1>
 <p>DuckDB has extensions, that will eventually be included in the base package, to connect directly to a s3 bucket. Just by setting the bucket name, pass key, and secret pass key if applicable you can pull all data from the s3 bucket to analyze and manipulate using duckdb.</p>
 <div class="code-with-filename">
 <div class="code-with-filename-file">
@@ -221,13 +224,27 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div class="sourceCode" id="cb1"><pre class="sourceCode py code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co">#first we build the the database</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>pip install duckdb<span class="op">==</span><span class="fl">0.6.0</span></span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> duckdb <span class="im">as</span> db</span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>con <span class="op">=</span> db.<span class="ex">connect</span>(database <span class="op">=</span> <span class="st">":memory:"</span>, read_only <span class="op">=</span> <span class="va">False</span>)</span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>dbExecute(DB, <span class="st">"""INSTALL httpfs;</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>DB <span class="op">=</span> db.<span class="ex">connect</span>(database <span class="op">=</span> <span class="st">":memory:"</span>, read_only <span class="op">=</span> <span class="va">False</span>)</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="co">#note: as of this post the extension is non functional in R but works in python</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>DB.execute(<span class="st">"""INSTALL httpfs;</span></span>
 <span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="st">                 LOAD httpfs"""</span>)</span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="co">#note: as of this post the extension is non functional in R but works in python</span></span>
-<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>dbExecute</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="co">#set access variables</span></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>DB.execute(<span class="st">"""SET s3_region = 'region of bucket';</span></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="st">              SET s3_access_key_id = 'AWS access key id';</span></span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a><span class="st">              SET s3_secret_access_key = 'AWS secret access key';"""</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="arrow-and-s3" class="level1">
+<h1>Arrow and s3</h1>
+<p>Another common way to interact with s3 is using the arrow package in R or Python. this is useful in R right now since duckdb extension crashes the r terminal. The Arrow package is also useful for other data wrangling features as well.</p>
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>using_arrow.r</strong></pre>
+</div>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">"arrow"</span>)</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(arrow)</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 
 
