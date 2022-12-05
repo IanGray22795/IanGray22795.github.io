@@ -6,7 +6,7 @@ categories: [news]
 image: "DuckDB_Logo.jpg"
 ---
 
-![](DuckDB_Logo.jpg)
+![](DuckDB_Logo.jpeg)
 
 # What is DuckDB 
 
