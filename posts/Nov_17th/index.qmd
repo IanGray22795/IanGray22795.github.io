@@ -2,6 +2,8 @@
 title: "AWS s3 a New Way to Access Data"
 author: "Ian Gray"
 date: "2022-11-17"
-categories: [news]
-image: "DuckDB_Logo.jpg"
+categories: [Analysis]
+image: "Amazon-S3-Logo.svg"
 ---
+
+info here
