@@ -39,6 +39,8 @@ Another common way to interact with s3 is using the arrow package in R or Python
 ```{.r filename=using_arrow.r}
 install.packages("arrow")
 library(arrow)
-
-
+#this returns a dataframe of each object in the s3 bucket
+get_bucket_df(bucket = 's3://my-bucket/')
+#pulls data from s3 of a specific type an error will be thrown if there are files of different types in the s3 storage
+open_dataset(source = 's3://my-bucket/', format = 'file type')
 ```
