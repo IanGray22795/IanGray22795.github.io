@@ -5,4 +5,15 @@ date: "2022-12-1"
 categories: [Presentation]
 ---
 
-go here
+# Proven Speed in Analysis
+
+Here is a demonstration of the usefulness of DuckDB
+
+<youtubelink>
+
+# Describtion of DuckDB by one of its Creator's
+
+<youtubelink>
+
+# Code Example's
+
