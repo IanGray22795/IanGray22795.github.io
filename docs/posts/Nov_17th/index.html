@@ -204,6 +204,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
 
 
+<section id="storage-to-be-accessed-from-anywhere" class="level1">
+<h1>Storage to be Accessed From Anywhere</h1>
+<p>With proper internet access you can pull and manipulate data from s3 with just a simple key.</p>
+</section>
 <section id="what-is-s3" class="level1">
 <h1>What is s3?</h1>
 <p>Simple, Storage, Service that is the expanded acronym for s3. In essence s3 or a s3 bucket is a simple storage provided as a service by cloud computing companies such as Amazon and Google. One of the most interesting things abour s3 is that it is a flat storage container although it looks very similar to your file system on your local computer. The one big difference is that when searching for files in s3 a program will see all files even if they are contained in a folder.</p>
@@ -230,7 +234,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="co">#set access variables</span></span>
 <span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>DB.execute(<span class="st">"""SET s3_region = 'region of bucket';</span></span>
 <span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="st">              SET s3_access_key_id = 'AWS access key id';</span></span>
-<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a><span class="st">              SET s3_secret_access_key = 'AWS secret access key';"""</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a><span class="st">              SET s3_secret_access_key = 'AWS secret access key';"""</span>)</span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>DB.execute(<span class="st">"SELECT * FROM parquet_scan('s3:''bucket_name/*.parquetZ')"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="arrow-and-s3" class="level1">

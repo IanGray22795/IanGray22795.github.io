@@ -5,6 +5,8 @@ date: "2022-11-17"
 categories: [Analysis]
 image: "Amazon-S3-Logo.svg"
 ---
+# Storage to be Accessed From Anywhere
+With proper internet access you can pull and manipulate data from s3 with just a simple key.
 
 # What is s3?
 
@@ -30,6 +32,8 @@ DB.execute("""INSTALL httpfs;
 DB.execute("""SET s3_region = 'region of bucket';
               SET s3_access_key_id = 'AWS access key id';
               SET s3_secret_access_key = 'AWS secret access key';""")
+
+DB.execute("SELECT * FROM parquet_scan('s3:''bucket_name/*.parquetZ')")
 ```
 
 # Arrow and s3
