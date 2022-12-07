@@ -6,7 +6,7 @@ categories: [Analysis]
 image: "Amazon-S3-Logo.svg"
 ---
 # Storage to be Accessed From Anywhere
-With proper internet access you can pull and manipulate data from s3 with just a simple key.
+With a proper internet access you can pull and manipulate data from s3 with just a simple key.
 
 # What is s3?
 
