@@ -3,22 +3,18 @@ title: "RCW Presentation"
 author: "Ian Gray"
 date: "2022-12-1"
 categories: [Presentation]
+
 ---
+
+Here are some useful links and examples for a more indepth look into DuckDB.
 
 # Proven Speed in Analysis
 
-
-
-
-{{< video, https://www.youtube.com/embed/Z-6SnP6yzgo >}}
-
-
-{{< video https://www.youtube.com/watch?v=Z-6SnP6yzgo >}}
-
+{{< video https://www.youtube.com/embed/Z-6SnP6yzgo start="2660" >}}
 
 # Describtion of DuckDB by one of its Creator's
 
-
+{{< video https://youtu.be/nPDomZQ8jI4 >}}
 
 
 # Code Example's
