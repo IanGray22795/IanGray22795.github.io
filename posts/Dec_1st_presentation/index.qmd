@@ -9,7 +9,7 @@ categories: [Presentation]
 
 Here is a demonstration of the usefulness of DuckDB
 
-<youtubelink>
+{{< video https://www.youtube.com/embed/Z-6SnP6yzgo >}}
 
 # Describtion of DuckDB by one of its Creator's
 
