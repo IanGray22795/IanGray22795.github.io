@@ -16,6 +16,9 @@ format:
   html:
     theme: darkly
     css: styles.css
+    toc: TRUE
+    embed-resources: TRUE
+    
 
 
 
