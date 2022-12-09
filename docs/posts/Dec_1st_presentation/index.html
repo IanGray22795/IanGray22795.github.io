@@ -4460,7 +4460,12 @@ vertical-align: -.125em;
   <ul>
   <li><a href="#proven-speed-in-analysis" id="toc-proven-speed-in-analysis" class="nav-link active" data-scroll-target="#proven-speed-in-analysis">Proven Speed in Analysis</a></li>
   <li><a href="#describtion-of-duckdb-by-one-of-its-creators" id="toc-describtion-of-duckdb-by-one-of-its-creators" class="nav-link" data-scroll-target="#describtion-of-duckdb-by-one-of-its-creators">Describtion of DuckDB by one of its Creator’s</a></li>
-  <li><a href="#code-examples" id="toc-code-examples" class="nav-link" data-scroll-target="#code-examples">Code Example’s</a></li>
+  <li><a href="#code-examples" id="toc-code-examples" class="nav-link" data-scroll-target="#code-examples">Code Example’s</a>
+  <ul class="collapse">
+  <li><a href="#r" id="toc-r" class="nav-link" data-scroll-target="#r">R</a></li>
+  </ul></li>
+  <li><a href="#python" id="toc-python" class="nav-link" data-scroll-target="#python">Python</a></li>
+  <li><a href="#github-repository" id="toc-github-repository" class="nav-link" data-scroll-target="#github-repository">GitHub Repository</a></li>
   </ul>
 </nav>
     </div>
@@ -4482,6 +4487,8 @@ vertical-align: -.125em;
 <section id="code-examples" class="level1">
 <h1>Code Example’s</h1>
 <p>Here is a demonstration of the usefulness of DuckDB</p>
+<section id="r" class="level2">
+<h2 class="anchored" data-anchor-id="r">R</h2>
 <div class="code-with-filename">
 <div class="code-with-filename-file">
 <pre><strong>building_the_database.r</strong></pre>
@@ -4509,8 +4516,42 @@ vertical-align: -.125em;
 <span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a>con_3 <span class="ot">&lt;-</span> <span class="fu">dbGetQuery</span>(Magic_DB, <span class="st">&quot;SELECT s.code, c.rarity, s.name, c.name FROM MTG.Cards c JOIN MTG.Sets s ON c.setcode = s.code LIMIT 50&quot;</span>)</span>
-<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a><span class="fu">View</span>(con_3)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a><span class="fu">View</span>(con_3)</span>
+<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a><span class="fu">dbDisconnect</span>(Magic_DB, <span class="at">shutdown =</span> <span class="cn">TRUE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
+</section>
+</section>
+<section id="python" class="level1">
+<h1>Python</h1>
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong></strong></pre>
+</div>
+<div class="sourceCode" id="cb2"><pre class="sourceCode py code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> duckdb</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> pyarrow <span class="im">import</span> json</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>con <span class="op">=</span> duckdb.<span class="ex">connect</span>(database <span class="op">=</span> <span class="st">&#39;:memory:&#39;</span>, read_only<span class="op">=</span><span class="va">False</span>)</span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>con.execute(<span class="st">&quot;CREATE OR REPLACE TABLE Cards AS SELECT * FROM read_csv_auto(&#39;..\data\sqllite_data\AllPrintingsCSVFiles\cards.csv&#39;,SAMPLE_SIZE=-1);&quot;</span>)</span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>con.execute(<span class="st">&quot;CREATE OR REPLACE TABLE Legalities AS SELECT * FROM read_csv_auto(&#39;..\data\sqllite_data\AllPrintingsCSVFiles\legalities.csv&#39;,SAMPLE_SIZE=-1);&quot;</span>)</span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>con.execute(<span class="st">&quot;CREATE OR REPLACE TABLE Meta AS SELECT * FROM read_csv_auto(&#39;..\data\sqllite_data\AllPrintingsCSVFiles\meta.csv&#39;,SAMPLE_SIZE=-1);&quot;</span>)</span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>con.execute(<span class="st">&quot;CREATE OR REPLACE TABLE Rulings AS SELECT * FROM read_csv_auto(&#39;..\data\sqllite_data\AllPrintingsCSVFiles</span><span class="ch">\\</span><span class="st">rulings.csv&#39;,SAMPLE_SIZE=-1);&quot;</span>)</span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a>con.execute(<span class="st">&quot;CREATE OR REPLACE TABLE Set_translations AS SELECT * FROM read_csv_auto(&#39;..\data\sqllite_data\AllPrintingsCSVFiles\set_translations.csv&#39;,SAMPLE_SIZE=-1);&quot;</span>)</span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a>con.execute(<span class="st">&quot;CREATE OR REPLACE TABLE Sets AS SELECT * FROM read_csv_auto(&#39;..\data\sqllite_data\AllPrintingsCSVFiles\sets.csv&#39;,SAMPLE_SIZE=-1);&quot;</span>)</span>
+<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a>con.execute(<span class="st">&quot;CREATE OR REPLACE TABLE Tokens AS SELECT * FROM read_csv_auto(&#39;..\data\sqllite_data\AllPrintingsCSVFiles</span><span class="ch">\\</span><span class="st">tokens.csv&#39;,SAMPLE_SIZE=-1);&quot;</span>)</span>
+<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> con.execute(<span class="st">&quot;SELECT * FROM Cards&quot;</span>).fetchdf()</span>
+<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a>df.info()</span>
+<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a>con.close()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="github-repository" class="level1">
+<h1>GitHub Repository</h1>
+<p><a href="https://github.com/IanGray22795/MTG_Database">Magic_Database</a></p>
 
 
 </section>
