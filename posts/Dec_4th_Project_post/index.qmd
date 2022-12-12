@@ -1,0 +1,27 @@
+---
+title: "Project Outcomes"
+author: "Ian Gray"
+date: "2022-12-4"
+categories: [Project]
+---
+
+# Project Deliverables/Goals
+
+- Construct a database using duckdb of the entire Magic the Gathering Card collection that is completely transferable from one system to another without conection to a main hub. | <span style = "color: green;">Completed $\checkmark$</span> 
+- Implment the Duckdb database using Python and R in tandem. | <span style = "color: green;">Completed $\checkmark$</span> 
+- Expand understanding of Duckdb to provide guidance on its uses and advantages when needing to use a database. | <span style = "color: green;">Completed $\checkmark$</span>
+- Provide analytical review of magic the gathering cards using the constructed Duckdb database as the data source. | <span style = "color: red;">Incomlpete</span> 
+
+### Database Implementation and Transferability
+
+Using Duck_DB and it's integrated packages to build databases in R and Python I was able to create a fully transferable database all held on github for anyone to download and analyze.
+```{mermaid}
+flowchart LR
+  A(MTG_JSON:Data) --> B(Duck_DB:Database)
+  B(DUCK_DB:DATABASE) --> C[GITHUB Repository:Transferability]
+```
+
+### Duck_DB it's Uses and Structure
+
+This was a large part of my project studying the finest details of Duck_DB and how/ when it is best implemented and when it can be used to solve problems in other projects. AWS is one case where Duck_DB is exteremly useful for analyzing large aounts of data that is stored in an s3 bucket. Additionally, when there might be an issue with computer memory it is extermely useful for analyzing data. I found it very useful for another project where I was able to analyze millions of rows of data exteremly quickly and effieciently even though the size of the data was to large for R to handle in a single data frame.
+
