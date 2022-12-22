@@ -5,6 +5,10 @@ date: "2022-12-1"
 categories: [Presentation]
 ---
 
+# Poster
+
+![](Presentation_poster.png)
+
 Here are some useful links and examples for a more indepth look into DuckDB.
 
 # Proven Speed in Analysis

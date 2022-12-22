@@ -13,4 +13,6 @@ about:
 
 ---
 
-About this blog
+# Purpose
+
+This is a blog to show my work as a Data Scientist/ Anayst
