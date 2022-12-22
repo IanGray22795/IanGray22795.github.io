@@ -10,7 +10,10 @@ about:
     - icon: github
       text: Github
       href: https://github.com/IanGray22795
+    - icon: send-fill
+      text: Email
+      href: https://ian.m.gray27@gmail.com
 
 ---
 
-This is a blog to show my work as a Data Scientist. I am a recent graduate of [BYU-I](https://www.byui.edu) with a Bachelor's of Science in Data Science. I have worked with several companies thus far mostly working in Pyhton, R and SQL along with Power BI and Tableau and 
+This is a blog to show my work as a Data Scientist. I am a recent graduate of [BYU-I](https://www.byui.edu) with a Bachelor's of Science in Data Science. I have worked on several projects with various different companies using my skills in SQL, Python, R, Power BI, and Tableau. I am currently looking for new employment and would love to speak about any opportunities you may have at your company. 
