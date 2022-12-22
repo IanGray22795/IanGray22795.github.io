@@ -2,7 +2,7 @@
 title: "RCW Presentation"
 author: "Ian Gray"
 date: "2022-12-1"
-categories: [Presentation]
+categories: [Presentation, Project]
 ---
 
 # Poster

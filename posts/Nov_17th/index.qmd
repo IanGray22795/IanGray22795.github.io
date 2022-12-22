@@ -2,7 +2,7 @@
 title: "AWS s3 a New Way to Access Data"
 author: "Ian Gray"
 date: "2022-11-17"
-categories: [Analysis]
+categories: [Analysis, Project]
 image: "Amazon-S3-Logo.svg"
 ---
 # Storage to be Accessed From Anywhere
