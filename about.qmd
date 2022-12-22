@@ -1,6 +1,6 @@
 ---
 title: "About"
-image: profile.jpg
+image: profile_photo.jpg
 about:
   template: jolla
   links:
@@ -13,6 +13,4 @@ about:
 
 ---
 
-# Purpose
-
-This is a blog to show my work as a Data Scientist/ Anayst
+This is a blog to show my work as a Data Scientist. I am a recent graduate of [BYU-I](https://www.byui.edu) with a Bachelor's of Science in Data Science. I have worked with several companies thus far mostly working in Pyhton, R and SQL along with Power BI and Tableau and 
