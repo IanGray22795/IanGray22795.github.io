@@ -12,7 +12,7 @@ about:
       href: https://github.com/IanGray22795
     - icon: send-fill
       text: Email
-      href: ian.m.gray27@gmail.com
+      href: mailto:ian.m.gray27@gmail.com
 
 ---
 
