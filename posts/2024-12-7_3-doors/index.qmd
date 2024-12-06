@@ -1,0 +1,87 @@
+---
+title: "The 3 Door Problem"
+author: "Ian Gray"
+date: "2024-12-7"
+categories: [Python, Probability] 
+---
+
+# The problem
+
+
+
+Here are some useful links and examples for a more indepth look into DuckDB.
+
+# Proven Speed in Analysis
+
+{{< video https://www.youtube.com/embed/Z-6SnP6yzgo start="2660" >}}
+
+# Describtion of DuckDB by one of its Creator's
+
+{{< video https://youtu.be/nPDomZQ8jI4 >}}
+
+
+# Code Example's
+
+Here is a demonstration of the usefulness of DuckDB
+
+## R
+
+```{.r filename=building_the_database.r}
+library("DBI")
+library("tidyverse")
+
+Magic_DB = dbConnect(duckdb::duckdb(), dbdir = ":memory:", read_only = FALSE)
+
+dbExecute(Magic_DB, "CREATE SCHEMA IF NOT EXISTS MTG;")
+dbExecute(Magic_DB, "CREATE OR REPLACE TABLE MTG.Cards AS SELECT * FROM read_csv_auto('..\\MTG_Database\\data\\sqllite_data\\AllPrintingsCSVFiles\\cards.csv',SAMPLE_SIZE=-1);")
+dbExecute(Magic_DB, "CREATE OR REPLACE TABLE MTG.Legalities AS SELECT * FROM read_csv_auto('..\\MTG_Database\\data\\sqllite_data\\AllPrintingsCSVFiles\\legalities.csv',SAMPLE_SIZE=-1);")
+dbExecute(Magic_DB, "CREATE OR REPLACE TABLE MTG.Meta AS SELECT * FROM read_csv_auto('..\\MTG_Database\\data\\sqllite_data\\AllPrintingsCSVFiles\\meta.csv',SAMPLE_SIZE=-1);")
+dbExecute(Magic_DB, "CREATE OR REPLACE TABLE MTG.Rulings AS SELECT * FROM read_csv_auto('..\\MTG_Database\\data\\sqllite_data\\AllPrintingsCSVFiles\\rulings.csv',SAMPLE_SIZE=-1);")
+dbExecute(Magic_DB, "CREATE OR REPLACE TABLE MTG.Set_translations AS SELECT * FROM read_csv_auto('..\\MTG_Database\\data\\sqllite_data\\AllPrintingsCSVFiles\\set_translations.csv',SAMPLE_SIZE=-1);")
+dbExecute(Magic_DB, "CREATE OR REPLACE TABLE MTG.Sets AS SELECT * FROM read_csv_auto('..\\MTG_Database\\data\\sqllite_data\\AllPrintingsCSVFiles\\sets.csv',SAMPLE_SIZE=-1);")
+dbExecute(Magic_DB, "CREATE OR REPLACE TABLE MTG.Tokens AS SELECT * FROM read_csv_auto('..\\MTG_Database\\data\\sqllite_data\\AllPrintingsCSVFiles\\tokens.csv',SAMPLE_SIZE=-1);")
+
+con <- dbGetQuery(Magic_DB, "SELECT * FROM MTG.Sets LIMIT 10")
+View(con)
+con_1 <- dbGetQuery(Magic_DB, "DESCRIBE MTG.Cards;")
+View(con_1)
+con_2 <- dbGetQuery(Magic_DB, "DESCRIBE MTG.Sets;")
+View(con_2) 
+
+
+con_3 <- dbGetQuery(Magic_DB, "SELECT s.code, c.rarity, s.name, c.name FROM MTG.Cards c JOIN MTG.Sets s ON c.setcode = s.code LIMIT 50")
+View(con_3)
+
+dbDisconnect(Magic_DB, shutdown = TRUE)
+```
+
+
+# Python
+```{.py filename=}
+import duckdb
+import numpy as np
+from pyarrow import json
+import pandas as pd
+
+con = duckdb.connect(database = ':memory:', read_only=False)
+
+con.execute("CREATE OR REPLACE TABLE Cards AS SELECT * FROM read_csv_auto('..\data\sqllite_data\AllPrintingsCSVFiles\cards.csv',SAMPLE_SIZE=-1);")
+con.execute("CREATE OR REPLACE TABLE Legalities AS SELECT * FROM read_csv_auto('..\data\sqllite_data\AllPrintingsCSVFiles\legalities.csv',SAMPLE_SIZE=-1);")
+con.execute("CREATE OR REPLACE TABLE Meta AS SELECT * FROM read_csv_auto('..\data\sqllite_data\AllPrintingsCSVFiles\meta.csv',SAMPLE_SIZE=-1);")
+con.execute("CREATE OR REPLACE TABLE Rulings AS SELECT * FROM read_csv_auto('..\data\sqllite_data\AllPrintingsCSVFiles\\rulings.csv',SAMPLE_SIZE=-1);")
+con.execute("CREATE OR REPLACE TABLE Set_translations AS SELECT * FROM read_csv_auto('..\data\sqllite_data\AllPrintingsCSVFiles\set_translations.csv',SAMPLE_SIZE=-1);")
+con.execute("CREATE OR REPLACE TABLE Sets AS SELECT * FROM read_csv_auto('..\data\sqllite_data\AllPrintingsCSVFiles\sets.csv',SAMPLE_SIZE=-1);")
+con.execute("CREATE OR REPLACE TABLE Tokens AS SELECT * FROM read_csv_auto('..\data\sqllite_data\AllPrintingsCSVFiles\\tokens.csv',SAMPLE_SIZE=-1);")
+
+df = con.execute("SELECT * FROM Cards").fetchdf()
+df.info()
+
+con.close()
+```
+
+
+# GitHub Repository
+
+[Magic_Database](https://github.com/IanGray22795/MTG_Database)
+
+
