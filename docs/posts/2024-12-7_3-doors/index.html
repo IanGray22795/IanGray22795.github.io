@@ -7,9 +7,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Ian Gray">
-<meta name="dcterms.date" content="2022-11-07">
+<meta name="dcterms.date" content="2024-12-07">
 
-<title>Ian Gray - DuckDB Synopses</title>
+<title>Ian Gray - The Montny Hall Problem or 3 Door Problem</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -22,69 +22,6 @@ width: 0.8em;
 margin: 0 0.8em 0.2em -1.6em;
 vertical-align: middle;
 }
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-{ counter-reset: source-line 0; }
-pre.numberSource code > span
-{ position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-{ content: counter(source-line);
-position: relative; left: -1em; text-align: right; vertical-align: baseline;
-border: none; display: inline-block;
--webkit-touch-callout: none; -webkit-user-select: none;
--khtml-user-select: none; -moz-user-select: none;
--ms-user-select: none; user-select: none;
-padding: 0 4px; width: 4em;
-color: #aaaaaa;
-}
-pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa; padding-left: 4px; }
-div.sourceCode
-{ }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
-}
-code span.al { color: #ff0000; font-weight: bold; } 
-code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } 
-code span.at { color: #7d9029; } 
-code span.bn { color: #40a070; } 
-code span.bu { color: #008000; } 
-code span.cf { color: #007020; font-weight: bold; } 
-code span.ch { color: #4070a0; } 
-code span.cn { color: #880000; } 
-code span.co { color: #60a0b0; font-style: italic; } 
-code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } 
-code span.do { color: #ba2121; font-style: italic; } 
-code span.dt { color: #902000; } 
-code span.dv { color: #40a070; } 
-code span.er { color: #ff0000; font-weight: bold; } 
-code span.ex { } 
-code span.fl { color: #40a070; } 
-code span.fu { color: #06287e; } 
-code span.im { color: #008000; font-weight: bold; } 
-code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } 
-code span.kw { color: #007020; font-weight: bold; } 
-code span.op { color: #666666; } 
-code span.ot { color: #007020; } 
-code span.pp { color: #bc7a00; } 
-code span.sc { color: #4070a0; } 
-code span.ss { color: #bb6688; } 
-code span.st { color: #4070a0; } 
-code span.va { color: #19177c; } 
-code span.vs { color: #4070a0; } 
-code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } 
 </style>
 
 
@@ -4405,11 +4342,10 @@ vertical-align: -.125em;
 <header id="title-block-header" class="quarto-title-block default page-columns page-full">
   <div class="quarto-title-banner page-columns page-full">
     <div class="quarto-title column-body">
-      <h1 class="title">DuckDB Synopses</h1>
+      <h1 class="title">The Montny Hall Problem or 3 Door Problem</h1>
                                 <div class="quarto-categories">
-                <div class="quarto-category">News</div>
-                <div class="quarto-category">Analysis</div>
-                <div class="quarto-category">Project</div>
+                <div class="quarto-category">Python</div>
+                <div class="quarto-category">Probability</div>
               </div>
                   </div>
   </div>
@@ -4427,7 +4363,7 @@ vertical-align: -.125em;
       <div>
       <div class="quarto-title-meta-heading">Published</div>
       <div class="quarto-title-meta-contents">
-        <p class="date">November 7, 2022</p>
+        <p class="date">December 7, 2024</p>
       </div>
     </div>
     
@@ -4443,10 +4379,8 @@ vertical-align: -.125em;
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#what-is-duckdb" id="toc-what-is-duckdb" class="nav-link active" data-scroll-target="#what-is-duckdb">What is DuckDB</a></li>
-  <li><a href="#why-use-duckdb" id="toc-why-use-duckdb" class="nav-link" data-scroll-target="#why-use-duckdb">Why Use DuckDB</a></li>
-  <li><a href="#starting-with-duckdb" id="toc-starting-with-duckdb" class="nav-link" data-scroll-target="#starting-with-duckdb">Starting With DuckDB</a></li>
-  <li><a href="#simple-yet-powerful" id="toc-simple-yet-powerful" class="nav-link" data-scroll-target="#simple-yet-powerful">Simple Yet Powerful</a></li>
+  <li><a href="#what-brought-us-here" id="toc-what-brought-us-here" class="nav-link active" data-scroll-target="#what-brought-us-here">What Brought us here</a></li>
+  <li><a href="#the-problem" id="toc-the-problem" class="nav-link" data-scroll-target="#the-problem">The problem</a></li>
   </ul>
 </nav>
     </div>
@@ -4456,43 +4390,13 @@ vertical-align: -.125em;
 
 
 
-<section id="what-is-duckdb" class="level1">
-<h1>What is DuckDB</h1>
-<p>DuckDB is an online analytical processing (OLAP) Database Management System (DBMS) run in process.</p>
+<section id="what-brought-us-here" class="level1">
+<h1>What Brought us here</h1>
+<p>Have you ever gotten into an arguement before. My guess would be it was heated and potentially you didn’t like the person for some amount of time afterward. Well I can’t say that this arguement went the same way. it was actually pretty friendly. The only issue was neither of us were going to budge from our positions me and my wife of course. This arguement wasn’t of any import but was, for lack of a better term, Logic and statistically based. Meaning it was only caused because one or both sides couldn’t understand the logic or statisticall probabliitiy of the situation itself.</p>
+<p>What was it that brought this arguement on well it is talked about in media. People know it as “The Monty Hall problem” see this reference fro reference: </p><div class="quarto-video ratio ratio-16x9"><iframe data-external="1" src="https://www.youtube.com/embed/AD6eJlbFa2I" title frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div><p></p>
 </section>
-<section id="why-use-duckdb" class="level1">
-<h1>Why Use DuckDB</h1>
-<p>There are several DBMS MySQL, PostgreSQL, SQLite to name a few. DuckDB is one that that has uses outside of what other DBMS can do or be used for. Referencing their page <a href="https:duckdb.org">duckdb.org</a>. Processing and storing tabular datasets is quick and easy to analyze, joining and aggregating large datasets is made simple through SQL queries, and doing large concurent changes to multiple tables quickly and efficiently.</p>
-</section>
-<section id="starting-with-duckdb" class="level1">
-<h1>Starting With DuckDB</h1>
-<div class="code-with-filename">
-<div class="code-with-filename-file">
-<pre><strong>Starting_with_duckdb.r</strong></pre>
-</div>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">&quot;duckdb&quot;</span>)</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(duckdb)</span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="co">#Start your first database</span></span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>DB <span class="ot">&lt;-</span> <span class="fu">dbConnect</span>(duckdb<span class="sc">::</span><span class="fu">duckdb</span>(), <span class="at">dbir =</span> <span class="st">&quot;:memory:&quot;</span>) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<p>We use the “:memory:” variable to save the data base as a non-physical file and hold the database in memory.</p>
-<p>Through these simple lines of code we build a database to start inputing data into. This is easily done through sql insert statments or loading in R data frames or csv/parquet files as such.</p>
-<div class="code-with-filename">
-<div class="code-with-filename-file">
-<pre><strong>Inputing_your_data.r</strong></pre>
-</div>
-<div class="sourceCode" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co">#inputing data directly with SQL statments</span></span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="fu">dbExecute</span>(DB, <span class="st">&quot;&quot;&quot;CREATE TABLE a (id INTEGER, name VARCHAR);</span></span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="st">                 INSERT INTO a VALUES (1, bob), (2, kate), (3, drew);&quot;&quot;&quot;</span>) </span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>                 </span>
-<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="co">#taking an r dataframe and inputing it into the database</span></span>
-<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="fu">dbWriteTable</span>(DB, <span class="st">&quot;iris_table&quot;</span>, iris) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<p>In the previous R snippet I showed how to create and table and put values into it in two of three ways duckdb suggests. Additionally, the way the SQL statement is coded to allow for multiple lines in a single function by using “;” to split Queries just like in normal SQL syntax.</p>
-</section>
-<section id="simple-yet-powerful" class="level1">
-<h1>Simple Yet Powerful</h1>
-<p>Just as shown above DuckDB is simple to use and easy to work with. additionally it encourages learning in multiple languages to get the best use from it. seeing as SQL, R, and Python are the best languages to learn for Data Science and Data Analytics it can be a powerful teaching tool. It also is best used for large data sources and can easily manipulate them with the dplyr as it natively convert dplyr functions into SQL Querys to analyza the data faster.</p>
+<section id="the-problem" class="level1">
+<h1>The problem</h1>
 
 
 </section>

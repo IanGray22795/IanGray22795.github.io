@@ -16,4 +16,4 @@ about:
 
 ---
 
-This is a blog to show my work as a Data Scientist. I am a recent graduate of [BYU-I](https://www.byui.edu) with a Bachelor's of Science in Data Science. I have worked on several projects with various different companies using my skills in SQL, Python, R, Power BI, and Tableau. I am currently looking for new employment and would love to speak about any opportunities you may have at your company. 
+This is a blog to show my work as a Data Scientist. I am a graduate from [BYU-I](https://www.byui.edu) with a Bachelor's of Science in Data Science. I have been Working as a Data Analyst for 3 years at Dunlop Sports America providing technology and data expertise as the business grows and utilizes data as the driving force for automation and efficency in the company. Additionally, I have several years of extra experience working with different companies during my undergraduate to complete data projects such as pipelines and automated reporting using my skills and knowledge of SQL, Python, Power BI, R, and Tableau. 
