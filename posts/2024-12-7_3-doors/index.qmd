@@ -2,7 +2,10 @@
 title: "The Montny Hall Problem or 3 Door Problem"
 author: "Ian Gray"
 date: "2024-12-7"
-categories: [Python, Probability] 
+categories: [Python, Probability]
+format:
+    html:
+        code-fold: true
 ---
 
 # What Brought us here
@@ -15,7 +18,92 @@ see this reference for reference: {{< video  src="https://www.youtube.com/embed/
 # The Problem
 
 As described in the video above you the participant are given the choice of 3 doors leaving you a 1 in 3 chance of choosing the correct door. Then the host shows you what is behind one of the two doors that is not the winner because he knows which door is the winner already. After the losing door is revealed the 
+host posses the question "Would you like to keep the door you picked or would you like to switch?" This is where all of the confusion with the problem stems from. The question of to switch or not to switch is at it's core a question about prbabilities and we know from the success of Las Vegas and the Lottery how much the average human understands about probabilities. 
 
+# Explanation and Solution
+
+Back to the topic at hand what makes this problem relate to probabilities so closely. Well given an equal chance to pick the correct door between 3 doors you have a 1 in 3 chance of choosing correctly or 1/3 which is equivalent to 33.33%. Now if you had the choice between 2 doors you have a 1 in 2 chance of choosing correctly or 1/2 which is equivalent to 50% which is greater than 33.33%. At a glance this is simple math is 50 > 33.33 this is true picking between 2 doors you will always have a higher chance of choosing the correct door. This is where the misunderstanding of how probabilites come into play though. The question we have to ask ourselves are we picking between 2 doors or are we still picking between 3 doors. Take this as an example, I ask you to stick your hand in a bag with 2 marbles of the same color and one of a different color the goal for you is to have the marble of a different color in your hand. After you take the first marble out I offer to trade your one marble for both marbles that are left in the bag. What would be your decision be keep the 1 or take the 2 obviously take the 2 right because you go from 1/3 to 2/3 or from 33.33% to 66.66%. This is the same situation for the doors once the wrong door is revealed it becomes innately attached to the last door in a group for your choosing. So you have the decision between two groups one with 2 doors and the other with one door. Which is why the odds are 33.33% if you stay with the same choice or 66.66% if you switch.
+
+# Demonstration
+
+```{{python}}
+from random import randint
+import pandas as pd
+import itertools as ito
+
+# Function picks which door is correct
+def correct_door():
+  return randint(0, 2)
+
+# Function creates a list of doors and assigns one as the correct door
+def create_doors():
+  door = [0,0,0]
+  door[correct_door()] = 1
+  return door
+
+# Function generates a number to pick a door form 
+def pick_door():
+  pick = randint(0,2)
+  return pick
+
+# Function reveals the door left in the list that is incorrect
+def remove_incorrect_door(doors):
+  if sum(doors) > 0:
+    doors.remove(0)
+  else:
+    doors.pop(randint(0,1))
+    return doors
+
+# Fucntion checks to see if switching the door was correct  
+def always_switch_doors():
+  doors = create_doors()
+  pick = pick_door()
+  your_pick = doors.pop(pick)
+  remove_incorrect_door(doors)
+  if sum(doors) == 1:
+    return 1
+  else:
+    return 0
+
+# Function checks to see if keeping your door was correct 
+def never_switch_doors():
+  doors = create_doors()
+  pick = pick_door()
+  your_pick = doors.pop(pick)
+  if your_pick == 1:
+    return 1
+  else:
+    return 0
+  
+
+# writes a number of instances for previous functions and writes each instance to a data frame
+def create_df(instances):
+  column1 = []
+  column2 = []
+  n=0
+  while n < instances:
+    column1.append(always_switch_doors())
+    column2.append(never_switch_doors())
+    n+=1
+  data = {
+    "fun1" : column1,
+    "fun2" : column2
+  }
+  data = pd.DataFrame(data)
+  return data
+
+# Runs and builds a data frame      
+dt = create_df(1000)
+
+# basic data exploration to understand outcomes
+dt.info()
+
+switching = sum(dt["fun1"])
+no_switch = sum(dt["fun2"])
+
+# print(switching)
+# print(no_switch)
+```
 
 
 
