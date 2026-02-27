@@ -7,12 +7,14 @@ categories: [Python, Probability]
 
 # What Brought us here
 
-Have you ever gotten into an arguement before. My guess would be it was heated and potentially you didn't like the person for some amount of time afterward. Well I can't say that this arguement went the same way. it was actually pretty friendly. The only issue was neither of us were going to budge from our positions me and my wife of course. This arguement wasn't of any import but was, for lack of a better term, Logic and statistically based. Meaning it was only caused because one or both sides couldn't understand the logic or statisticall probabliitiy of the situation itself.
+Have you ever gotten into an arguement before. My guess would be it was heated and potentially you didn't like the person for some amount of time afterward. Well I can't say that this arguement went the same way. it was actually pretty friendly. The only issue was neither of us were going to budge from our positions me and my wife of course. This arguement wasn't of any import but was, for lack of a better term, Logic and statistically based. Meaning it was only caused because one or both sides couldn't understand the logic or statistical probabliitiy of the situation itself.
 
 What was it that brought this arguement on well it is talked about in media. People know it as "The Monty Hall problem" 
-see this reference fro reference: {{< video  src="https://www.youtube.com/embed/AD6eJlbFa2I" >}}
+see this reference for reference: {{< video  src="https://www.youtube.com/embed/AD6eJlbFa2I" >}}
 
-# The problem
+# The Problem
+
+As described in the video above you the participant are given the choice of 3 doors leaving you a 1 in 3 chance of choosing the correct door. Then the host shows you what is behind one of the two doors that is not the winner because he knows which door is the winner already. After the losing door is revealed the 
 
 
 
